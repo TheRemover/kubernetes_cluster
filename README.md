@@ -17,8 +17,20 @@ manager:
       bootfiles
       
     power script??
+  
+  nfs
 
   kubespray
+  
+  pods:
+    ELK
+    grafana
+    prometheus
+    home-assistant
+    openvpn
+    passbolt
+    plex
+    
   
   
   
