@@ -1,25 +1,27 @@
-#!/usr/bin/python3
-
 import serial
 import json
 
 class Cluster:
 
-  def __init__(self):
+  def __init__(self, node_list='nodes.json', serial_port='/dev/ttyACM0', baud_rate=9600):
     self.nodes = None
-    with open('nodes.json') as f:
+    with open(node_list) as f:
       self.nodes = json.load(f)
-    self.ser = serial.Serial('/dev/ttyACM0')
-    self.ser.baudrate = 9600
+    self.ser = serial.Serial(serial_port)
+    self.ser.baudrate = baud_rate
 
   def power_off(self, type=None, name=None):
     for node in self.nodes:
-      if (node['type']==type or node['node'] in name) or (type is None and name is None):
-        self.ser(b"{} {}".format(node['relay'], 1))
+      if type is None and name is None:
+        self.ser.write("{} {}".format(node['relay'], 1).encode())
+      elif (node['type']==type or node['node'] in name):
+        self.ser.write("{} {}".format(node['relay'], 1).encode())
 
   def power_on(self,type=None, name=None):
     for node in self.nodes:
-      if node['type']==type or node['node']==name or (not type and not node):
+      if type is None and name is None:
+        self.ser.write("{} {}".format(node['relay'], 0).encode())
+      elif node['type']==type or node['node']==name:
         self.ser.write("{} {}".format(node['relay'], 0).encode())
 
   def get_state(self):
@@ -28,14 +30,3 @@ class Cluster:
         print('{} - ON'.format(node['node']))
       else:
         print('{} - OFF'.format(node['node']))
-
-def main():
-  cluster = Cluster()
-  cluster.power_off()
-#  cluster.power_on(name="TK1C")
-#  cluster.power_on(name="N1L")
-#  cluster.power_on(name="N3R")
-#  cluster.get_state()
-
-if __name__ == "__main__":
-    main()

@@ -1,0 +1,92 @@
+[
+  {
+    "gpio": 21,
+    "relay": 1,
+    "node": "N1L",
+    "type": "nuc"
+  },
+  {
+    "gpio": 6,
+    "relay": 2,
+    "node": "N2L",
+    "type": "nuc"
+  },
+  {
+    "gpio": 20,
+    "relay": 3,
+    "node": "N3L",
+    "type": "nuc"
+  },
+  {
+    "gpio": 13,
+    "relay": 4,
+    "node": "N4L",
+    "type": "nuc"
+  },
+  {
+    "gpio": 25,
+    "relay": 5,
+    "node": "N5L",
+    "type": "nuc"
+  },
+  {
+    "gpio": 19,
+    "relay": 6,
+    "node": "N2R",
+    "type": "nuc"
+  },
+  {
+    "gpio": 24,
+    "relay": 7,
+    "node": "N1R",
+    "type": "nuc"
+  },
+  {
+    "gpio": 27,
+    "relay": 9,
+    "node": "N3R",
+    "type": "nuc"
+  },
+  {
+    "gpio": 2,
+    "relay": 10,
+    "node": "N4R",
+    "type": "nuc"
+  },
+  {
+    "gpio": 22,
+    "relay": 11,
+    "node": "N5R",
+    "type": "nuc"
+  },
+  {
+    "gpio": 17,
+    "relay": 12,
+    "node": "TK1A",
+    "type": "tk1"
+  },
+  {
+    "gpio": 9,
+    "relay": 13,
+    "node": "TK1B",
+    "type": "tk1"
+  },
+  {
+    "gpio": 3,
+    "relay": 14,
+    "node": "TK1C",
+    "type": "tk1"
+  },
+  {
+    "gpio": 10,
+    "relay": 15,
+    "node": "TK1D",
+    "type": "tk1"
+  },
+  {
+    "gpio": 4,
+    "relay": 16,
+    "node": "TK1E",
+    "type": "tk1"
+  }
+]
