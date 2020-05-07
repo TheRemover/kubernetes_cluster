@@ -1,0 +1,5 @@
+default ubuntu
+prompt 0
+label ubuntu
+        kernel ubuntu/linux
+        append initrd=ubuntu/initrd.gz hostname=node locale=en_US.UTF-8 keyboard-configuration/layoutcode=us url={{ web_server }}/{{ preseed }}
