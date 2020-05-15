@@ -1,5 +1,7 @@
 from cluster_power.cluster_power import Cluster
 
+
+
 def main():
   cluster = Cluster()
   print(cluster.nodes)

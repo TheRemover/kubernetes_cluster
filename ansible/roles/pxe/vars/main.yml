@@ -1,0 +1,10 @@
+web_server: 172.16.0.1
+preseed_path: /ubuntu/preseed/local-sources.seed
+ssh_key:
+mirror_server: 172.16.0.1
+mirror_path: /ubuntu/ubuntumirror
+user_full: ansible
+user_name: ansible
+user_encrypted_pass: 
+init_script_path: /ubuntu/preseed/
+init_script: init.sh

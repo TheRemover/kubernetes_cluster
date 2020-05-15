@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+DIR=/home/ansible/.ssh
+
+mkdir -p $DIR
+echo 'ssh-rsa {{ ssh_key }}' >> $DIR/authorized_keys
+chmod 700 $DIR
+chmod 400 $DIR/authorized_keys
+chown -R ansible:ansible $DIR
+echo 'ansible ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+apt-get -y install openssh-server
